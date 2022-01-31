@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  border: solid 1px black;
+}
