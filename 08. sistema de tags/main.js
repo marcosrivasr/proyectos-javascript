@@ -24,7 +24,8 @@ tagsContainer.classList.add("tag-container");
 inputTagContainer.appendChild(tagsContainer);
 tagsContainer.appendChild(inputTag);
 
-inputTag.addEventListener("keypress", (e) => {
+inputTag.addEventListener("keydown", (e) => {
+  debugger;
   if (e.key === "Enter" && inputTag.textContent !== "") {
     e.preventDefault();
     if (!existTag(inputTag.textContent)) {
@@ -32,6 +33,13 @@ inputTag.addEventListener("keypress", (e) => {
       inputTag.textContent = "";
       renderTags();
     }
+  } else if (
+    e.key === "Backspace" &&
+    inputTag.textContent === "" &&
+    tags.length > 0
+  ) {
+    tags.pop();
+    renderTags();
   }
 });
 
