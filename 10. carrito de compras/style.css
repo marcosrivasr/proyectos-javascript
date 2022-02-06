@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+#store-container {
+  display: flex;
+  gap: 10px;
+}
+
+#store-container .item {
+  border: solid 1px #ccc;
+  padding: 20px;
+}
+
+#shopping-cart-container {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  border: solid 1px #ccc;
+  padding: 10px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
