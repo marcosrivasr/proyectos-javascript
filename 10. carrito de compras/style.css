@@ -45,3 +45,9 @@ body {
   font-weight: bold;
   font-size: 20px;
 }
+button {
+  border: none;
+  background-color: rgb(241, 217, 28);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
