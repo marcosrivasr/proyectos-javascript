@@ -28,3 +28,20 @@ body {
 .hide {
   display: none;
 }
+
+.item .title {
+  font-weight: bold;
+}
+.item .price {
+  color: green;
+  font-weight: bold;
+}
+.item div {
+  padding: 5px 0;
+}
+
+.total {
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+}

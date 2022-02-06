@@ -91,9 +91,11 @@ function renderStore() {
     return `
         <div class="item">
             <div class="title">${item.title}</div>
-            <div class="price">${item.price}</div>
+            <div class="price">${numberToCurrency(item.price)}</div>
             <div class="qty">${item.qty} units</div>
-            <div class="actions"><button class="add" data-id="${item.id}">Add to the shopping cart</button></div>
+            <div class="actions"><button class="add" data-id="${
+              item.id
+            }">Add to the shopping cart</button></div>
         </div>`;
   });
 
@@ -121,8 +123,11 @@ function renderShoppingCart() {
     return `
             <div class="item">
                 <div class="title">${dbItem.title}</div>
-                <div class="price">${dbItem.price}</div>
+                <div class="price">${numberToCurrency(dbItem.price)}</div>
                 <div class="qty">${item.qty} units</div>
+                <div class="subtotal">Subtotal: ${numberToCurrency(
+                  item.qty * dbItem.price
+                )}</div>
                 <div class="actions">
                     <button class="addOne" data-id="${dbItem.id}">+</button>
                     <button class="removeOne" data-id="${dbItem.id}">-</button>
@@ -140,8 +145,10 @@ function renderShoppingCart() {
     <button id="bPurchase">Terminar compra</button>
   </div>`
       : "";
+  const total = shoppingCart.methods.getTotal();
+  const totalDiv = `<div class="total">Total: ${numberToCurrency(total)}</div>`;
   document.querySelector("#shopping-cart-container").innerHTML =
-    closeButton + html.join("") + purchaseButton;
+    closeButton + html.join("") + totalDiv + purchaseButton;
 
   document.querySelector("#shopping-cart-container").classList.remove("hide");
   document.querySelector("#shopping-cart-container").classList.add("show");
@@ -172,4 +179,12 @@ function renderShoppingCart() {
       shoppingCart.methods.purchase();
     });
   }
+}
+
+function numberToCurrency(n) {
+  return new Intl.NumberFormat("en-US", {
+    maximumSignificantDigits: 2,
+    style: "currency",
+    currency: "USD",
+  }).format(n);
 }
