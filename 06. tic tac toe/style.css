@@ -2,6 +2,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#app {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#player {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .board {
   display: flex;
   flex-direction: column;
@@ -13,4 +24,6 @@ body {
   width: 100px;
   height: 100px;
   border: solid 1px black;
+  font-size: 28px;
+  font-weight: bolder;
 }

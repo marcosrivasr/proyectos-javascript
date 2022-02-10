@@ -57,3 +57,11 @@ body {
 .activated {
   outline: greenyellow solid 2px;
 }
+
+.input {
+  width: 500px;
+  padding: 20px;
+  font-size: 38px;
+  margin: 0 auto;
+  display: block;
+}

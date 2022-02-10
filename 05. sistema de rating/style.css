@@ -1,5 +1,10 @@
+body {
+  background-color: rgb(45, 122, 45);
+}
 .rating {
+  margin-top: 100px;
   display: flex;
+  justify-content: center;
 }
 .item {
   background-color: rgb(198, 198, 198);
