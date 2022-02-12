@@ -60,8 +60,10 @@ const keys = [
 ];
 let shift = false;
 let mayus = false;
+let current = null;
 
 renderKeyboard();
+
 function renderKeyboard() {
   const keyboardContainer = document.querySelector("#keyboard-container");
   let empty = `<div class="key-empty"></div>`;
@@ -107,7 +109,9 @@ function renderKeyboard() {
         } else if (key.textContent === "MAYUS") {
           mayus = !mayus;
           renderKeyboard();
-        } else if (key.textContent === "SPACE") {
+        } else if (key.textContent === "") {
+          debugger;
+          current.value += " ";
         } else {
           current.value += key.textContent;
           if (shift) {
@@ -120,7 +124,6 @@ function renderKeyboard() {
     });
   });
 
-  let current = null;
   document.querySelectorAll("input").forEach((input) => {
     input.addEventListener("focusin", (e) => {
       current = e.target;
