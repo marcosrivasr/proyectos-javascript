@@ -41,10 +41,9 @@ function renderPlayer() {
 
 function PCPlays() {
   renderPlayer();
-  console.log("PC Plays... ");
+
   setTimeout(() => {
     let played = false;
-    debugger;
     const options = checkIfCanWin();
     if (options.length > 0) {
       const winnerOption = options[0];
@@ -159,25 +158,34 @@ function checkIfCanWin() {
 }
 
 function checkIfWinner() {
+  const p1 = arr[0][0];
+  const p2 = arr[0][1];
+  const p3 = arr[0][2];
+  const p4 = arr[1][0];
+  const p5 = arr[1][1];
+  const p6 = arr[1][2];
+  const p7 = arr[2][0];
+  const p8 = arr[2][1];
+  const p9 = arr[2][2];
   const PCWon = [
-    board[0][0] === "X" && board[1][1] === "X" && board[2][2] === "X",
-    board[2][0] === "X" && board[1][1] === "X" && board[0][2] === "X",
-    board[0][0] === "X" && board[1][0] === "X" && board[2][0] === "X",
-    board[0][1] === "X" && board[1][1] === "X" && board[2][1] === "X",
-    board[0][2] === "X" && board[1][2] === "X" && board[2][2] === "X",
-    board[0][0] === "X" && board[0][1] === "X" && board[0][2] === "X",
-    board[1][0] === "X" && board[1][1] === "X" && board[1][2] === "X",
-    board[2][0] === "X" && board[2][1] === "X" && board[2][2] === "X",
+    p1 === "X" && p5 === "X" && p9 === "X",
+    p7 === "X" && p5 === "X" && p3 === "X",
+    p1 === "X" && p4 === "X" && p7 === "X",
+    p2 === "X" && p5 === "X" && p8 === "X",
+    p3 === "X" && p6 === "X" && p9 === "X",
+    p1 === "X" && p2 === "X" && p3 === "X",
+    p4 === "X" && p5 === "X" && p6 === "X",
+    p7 === "X" && p8 === "X" && p9 === "X",
   ];
   const playerWon = [
-    board[0][0] === "O" && board[1][1] === "O" && board[2][2] === "O",
-    board[2][0] === "O" && board[1][1] === "O" && board[0][2] === "O",
-    board[0][0] === "O" && board[1][0] === "O" && board[2][0] === "O",
-    board[0][1] === "O" && board[1][1] === "O" && board[2][1] === "O",
-    board[0][2] === "O" && board[1][2] === "O" && board[2][2] === "O",
-    board[0][0] === "O" && board[0][1] === "O" && board[0][2] === "O",
-    board[1][0] === "O" && board[1][1] === "O" && board[1][2] === "O",
-    board[2][0] === "O" && board[2][1] === "O" && board[2][2] === "O",
+    p1 === "O" && p5 === "O" && p9 === "O",
+    p7 === "O" && p5 === "O" && p3 === "O",
+    p1 === "O" && p4 === "O" && p7 === "O",
+    p2 === "O" && p5 === "O" && p8 === "O",
+    p3 === "O" && p6 === "O" && p9 === "O",
+    p1 === "O" && p2 === "O" && p3 === "O",
+    p4 === "O" && p5 === "O" && p6 === "O",
+    p7 === "O" && p8 === "O" && p9 === "O",
   ];
 
   if (PCWon.includes(true)) {
